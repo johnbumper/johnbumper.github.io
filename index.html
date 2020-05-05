@@ -3,8 +3,10 @@
 <head>
 	<title>Test</title>
 	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<script src="js/angular.min.js"></script>
+	<script src="js/angular-route.min.js"></script>
 </head>
-<body>
+<body ng-app='routingDemoApp'>
 	<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
 		<a class="navbar-brand" href="#">Top navbar</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -13,10 +15,13 @@
 		<div class="collapse navbar-collapse" id="navbarCollapse">
 			<ul class="navbar-nav mr-auto">
 				<li class="nav-item active">
-					<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+					<a class="nav-link" href="#!/">Home <span class="sr-only">(current)</span></a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="#">Link</a>
+					<a class="nav-link" href="#!/xcc">C's Menu</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#!/bumper">B's Life</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
@@ -28,6 +33,16 @@
 			</form>
 		</div>
 	</nav>
+	<SCRIPT>
+		ANGULAR.MODULE('ROUTINGDEMOAPP',['NGROUTE'])
+		.CONFIG(['$ROUTEPROVIDER', FUNCTION($ROUTEPROVIDER){
+			$ROUTEPROVIDER
+			.WHEN('/',{TEMPLATE:'This is home page'})
+			.WHEN('/xcc',{TEMPLATE:'This is the page for Chu'})
+			.WHEN('/bumper',{TEMPLATE:'This is the page for Bumper'})
+			.OTHERWISE({REDIRECTTO:'/'});
+		}]);
+	</SCRIPT>
 	<h1 style="text-align: center;">Hello world</h1>
 	<h2 style="text-align: center;">And hello XCC</h2>
 </body>
