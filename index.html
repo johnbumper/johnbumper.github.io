@@ -5,32 +5,10 @@
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<script src="js/angular.min.js"></script>
 	<script src="js/angular-route.min.js"></script>
-	<script type="text/javascript">
-	angular.module('ngRouteExample', ['ngRoute'])
-	.controller('HomeController', function ($scope, $route) { $scope.$route = $route;})
-	.controller('ChuController', function ($scope, $route) { $scope.$route = $route;})
-	.controller('BumperController', function ($scope, $route) { $scope.$route = $route;})
-	.config(function ($routeProvider) {
-		$routeProvider.
-		when('/home', {
-			templateUrl: 'index.html',
-			controller: 'HomeController'
-		}).
-		when('/xcc', {
-			templateUrl: 'chu.html',
-			controller: 'ChuController'
-		}).
-		when('/bumper', {
-			templateUrl: 'bumper.html',
-			controller: 'BumperController'
-		}).
-		otherwise({
-			redirectTo: '/home'
-		});
-	});
-	</script>
+	<script src="script.js"></script>
 </head>
-<body ng-app='routingDemoApp'>
+
+<body ng-app='ngRouteExample' class="ng-scope">
 	<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
 		<a class="navbar-brand" href="#!/home">Home</a>
 
