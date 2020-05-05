@@ -1,1 +1,29 @@
-<h1>Bumper</h1>
+<head>
+<meta charset="utf-8">
+<style>
+	.test img {
+		width: 100%;
+		transform: scale(0.5);
+	}
+
+	.ng-hide {
+		height: 0;
+		width: 0;
+		background-color: transparent;
+		top:-200px;
+		left: 200px;
+	}
+</style>
+<script src="js/angular-animate.min.js"></script>
+</head>
+	
+<body ng-app="myApp">
+	<h1>Bumper</h1>
+	<h2>Show Picture: <input type="checkbox" ng-model="myCheck"></h2>
+
+	<div ng-show="myCheck" class="test">
+		<img src="pics/IMG_5385.jpg">
+	</div>
+
+</body>
+

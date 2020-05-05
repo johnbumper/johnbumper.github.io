@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="utf-8">
 	<title>Test</title>
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<script src="js/angular.min.js"></script>
 	<script src="js/angular-route.min.js"></script>
-	<script src="script.js"></script>
+	<script src="js/script.js"></script>
 </head>
 
-<body ng-app='ngRouteExample' class="ng-scope">
+<body ng-app="ngRouteExample" class="ng-scope">
+	
 	<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
 		<a class="navbar-brand" href="#!/home">Home</a>
 
@@ -19,7 +21,7 @@
 		<div class="collapse navbar-collapse" id="navbarCollapse">
 			<ul class="navbar-nav mr-auto">
 				<li class="nav-item">
-					<a class="nav-link" href="#!/xcc">C's Menu</a>
+					<a class="nav-link" href="#!/chu">C's Menu</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="#!/bumper">B's Life</a>
@@ -35,10 +37,8 @@
 		</div>
 	</nav>
 
-	<h1 style="text-align: center;">Hello world</h1>
-	<h2 style="text-align: center;">And hello XCC</h2>
-
-	<div ng-view=""></div>
+	<div ng-view="">
+	</div>
 
 </body>
 </html>
