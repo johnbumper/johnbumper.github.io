@@ -5,10 +5,33 @@
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<script src="js/angular.min.js"></script>
 	<script src="js/angular-route.min.js"></script>
+	<script type="text/javascript">
+	angular.module('ngRouteExample', ['ngRoute'])
+	.controller('HomeController', function ($scope, $route) { $scope.$route = $route;})
+	.controller('AboutController', function ($scope, $route) { $scope.$route = $route;})
+	.config(function ($routeProvider) {
+		$routeProvider.
+		when('/home', {
+			templateUrl: 'embedded.home.html',
+			controller: 'HomeController'
+		}).
+		when('/xcc', {
+			templateUrl: 'about.html',
+			controller: 'AboutController'
+		}).
+		when('/bumper', {
+			templateUrl: 'bumper.html',
+			controller: 'AboutController'
+		}).
+		otherwise({
+			redirectTo: '/home'
+		});
+	});
+	</script>
 </head>
 <body ng-app='routingDemoApp'>
 	<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
-		<a class="navbar-brand" href="#">Home</a>
+		<a class="navbar-brand" href="#!/home">Home</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
@@ -30,18 +53,11 @@
 			</form>
 		</div>
 	</nav>
+
 	<h1 style="text-align: center;">Hello world</h1>
 	<h2 style="text-align: center;">And hello XCC</h2>
+
 	<div ng-view></div>
-	<script>
-		angular.module('routingDemoApp',['ngRoute'])
-        .config(['$routeProvider', function($routeProvider){
-            $routeProvider
-            .when('/xcc',{template:'This page is for Chu'})
-            .when('/bumper',{template:'This page is for Bumper'})
-            .otherwise({redirectTo:'/'});
-        }]);
-	</script>>
 
 </body>
 </html>
