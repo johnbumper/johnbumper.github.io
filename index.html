@@ -14,9 +14,6 @@
 		</button>
 		<div class="collapse navbar-collapse" id="navbarCollapse">
 			<ul class="navbar-nav mr-auto">
-				<li class="nav-item active">
-					<a class="nav-link" href="#!/">Home <span class="sr-only">(current)</span></a>
-				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="#!/xcc">C's Menu</a>
 				</li>
@@ -40,7 +37,6 @@
 		angular.module('routingDemoApp',['ngRoute'])
         .config(['$routeProvider', function($routeProvider){
             $routeProvider
-            .when('/',{template:'This is Homepage'})
             .when('/xcc',{template:'This page is for Chu'})
             .when('/bumper',{template:'This page is for Bumper'})
             .otherwise({redirectTo:'/'});
