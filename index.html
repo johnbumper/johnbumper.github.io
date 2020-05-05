@@ -33,18 +33,19 @@
 			</form>
 		</div>
 	</nav>
-	<div ng-view></div>
-	<SCRIPT>
-		ANGULAR.MODULE('ROUTINGDEMOAPP',['NGROUTE'])
-		.CONFIG(['$ROUTEPROVIDER', FUNCTION($ROUTEPROVIDER){
-			$ROUTEPROVIDER
-			.WHEN('/',{TEMPLATE:'This is home page'})
-			.WHEN('/xcc',{TEMPLATE:'This is the page for Chu'})
-			.WHEN('/bumper',{TEMPLATE:'This is the page for Bumper'})
-			.OTHERWISE({REDIRECTTO:'/'});
-		}]);
-	</SCRIPT>
 	<h1 style="text-align: center;">Hello world</h1>
 	<h2 style="text-align: center;">And hello XCC</h2>
+	<div ng-view></div>
+	<script>
+		angular.module('routingDemoApp',['ngRoute'])
+        .config(['$routeProvider', function($routeProvider){
+            $routeProvider
+            .when('/',{template:'This is Homepage'})
+            .when('/xcc',{template:'This page is for Chu'})
+            .when('/bumper',{template:'This page is for Bumper'})
+            .otherwise({redirectTo:'/'});
+        }]);
+	</script>>
+
 </body>
 </html>
