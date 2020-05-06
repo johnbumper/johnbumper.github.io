@@ -20,6 +20,10 @@ angular.module('ngRouteExample', ['ngRoute'])
         templateUrl: 'bumper.html',
         controller: 'BumperController'
     }).
+    when('/bumper/1', {
+        templateUrl: 'bumper/1.html',
+        controller: 'BumperController'
+    }).
     otherwise({
         redirectTo: '/home'
     });
